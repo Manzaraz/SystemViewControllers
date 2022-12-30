@@ -29,8 +29,26 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func cameraButtonTapped(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Elige el origen de la imagen", message: nil, preferredStyle: .actionSheet)
+        
+        // Actions
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
+            print("User selected Camera action")
+        }
+        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { action in
+            print("User selected Photo Library action")
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(cameraAction)
+        alertController.addAction(photoLibraryAction)
+        alertController.popoverPresentationController?.sourceView = sender
+        
+        present(alertController, animated: true, completion: nil)
     }
     @IBAction func emailButtonTapped(_ sender: UIButton) {
+        
     }
     
 
