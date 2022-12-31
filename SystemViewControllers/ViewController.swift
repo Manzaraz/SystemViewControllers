@@ -79,7 +79,7 @@ UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         guard let selectedImage = info[.originalImage] as? UIImage else { return }
         imageView.image = selectedImage
-        dismiss(animated: true, comp: nil)
+        dismiss(animated: true, completion: nil)
     }
  
     @IBAction func emailButtonTapped(_ sender: UIButton) {
